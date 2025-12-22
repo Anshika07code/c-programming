@@ -1,0 +1,48 @@
+#include <stdio.h>
+int main() {
+    int arr[50], n, choice, sum = 0;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    while(1) {
+        printf("\n--- Array Menu ---");
+        printf("\n1. Display");
+        printf("\n2. Sum");
+        printf("\n3. Largest");
+        printf("\n4. Exit");
+        printf("\nEnter choice: ");
+        scanf("%d", &choice);
+
+        if(choice == 4)
+            break;
+
+        switch(choice) {
+            case 1:
+                for(int i = 0; i < n; i++)
+                    printf("%d ", arr[i]);
+                break;
+            case 2:
+                sum = 0;
+                for(int i = 0; i < n; i++)
+                    sum += arr[i];
+                printf("Sum = %d", sum);
+                break;
+            case 3: {
+                int max = arr[0];
+                for(int i = 1; i < n; i++)
+                    if(arr[i] > max)
+                        max = arr[i];
+                printf("Largest = %d", max);
+                break;
+            }
+            default:
+                printf("Invalid choice");
+        }
+    }
+    return 0;
+}
