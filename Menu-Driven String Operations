@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[50];
+    int choice;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    while(1) {
+        printf("\n--- String Menu ---");
+        printf("\n1. Length");
+        printf("\n2. Reverse");
+        printf("\n3. Exit");
+        printf("\nEnter choice: ");
+        scanf("%d", &choice);
+
+        if(choice == 3)
+            break;
+
+        switch(choice) {
+            case 1:
+                printf("Length = %lu", strlen(str));
+                break;
+            case 2:
+                printf("Reverse = %s", strrev(str));
+                break;
+            default:
+                printf("Invalid choice");
+        }
+    }
+    return 0;
+}
