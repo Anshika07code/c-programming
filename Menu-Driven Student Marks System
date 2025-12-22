@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main() {
+    int choice;
+    float m1, m2, m3, total, avg;
+
+    while(1) {
+        printf("\n--- Student Menu ---");
+        printf("\n1. Enter Marks");
+        printf("\n2. Total & Average");
+        printf("\n3. Exit");
+        printf("\nEnter choice: ");
+        scanf("%d", &choice);
+
+        if(choice == 3)
+            break;
+
+        switch(choice) {
+            case 1:
+                printf("Enter 3 subject marks: ");
+                scanf("%f %f %f", &m1, &m2, &m3);
+                break;
+            case 2:
+                total = m1 + m2 + m3;
+                avg = total / 3;
+                printf("Total = %.2f\nAverage = %.2f", total, avg);
+                break;
+            default:
+                printf("Invalid choice");
+        }
+    }
+    return 0;
+}
